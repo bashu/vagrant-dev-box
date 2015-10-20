@@ -16,7 +16,7 @@ apt-get update -y
 apt-get upgrade -y
 
 # Useful tools
-apt-get install -y vim git-core fabric python-virtualenv gettext build-essential
+apt-get install -y vim git-core fabric python-virtualenv gettext build-essential libncurses-dev
 
 # Python Imaging Library
 apt-get install -y libjpeg-dev libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev

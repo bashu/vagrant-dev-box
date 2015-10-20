@@ -19,7 +19,7 @@ apt-get upgrade -y
 apt-get install -y vim git-core fabric python-virtualenv gettext build-essential libncurses-dev
 
 # Python Imaging Library
-apt-get install -y libjpeg-dev libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev
+apt-get install -y libjpeg-dev libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev
 
 # Python 2 & 3 packages
 apt-get install -y python python-dev python-sphinx python-pip

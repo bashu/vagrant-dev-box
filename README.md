@@ -1,39 +1,37 @@
-Vagrant box for Wagtail site development
-========================================
+Vagrant box for Django site development
+=======================================
 
-A Vagrant box based on Ubuntu trusty32, with the dependencies for developing Wagtail sites preinstalled.
+A Vagrant box based on Ubuntu trusty64, with the dependencies for
+developing Django sites preinstalled.
 
 Usage
 -----
 
-This box is available on Vagrant cloud (aka Atlas) so can be used by just setting your base box to ``torchbox/wagtail``.
+This box is available on Vagrant cloud (aka Atlas) so can be used by
+just setting your base box to ``bashu/djangobox``.
 
 To create a new Vagrantfile that uses this box, run the following:
-
-```
-vagrant init torchbox/wagtail
+```shell
+vagrant init bashu/djangobox
 ```
 
 What's inside
 -------------
 
- - Python 2.7.9 with virtualenv and pip
- - Python 3.4.3 with pip (use bundled pyvenv for virtual environments)
+ - Python 2 & 3 (use virtualenv for virtual environments)
  - PostgreSQL 9.3.6
- - Redis 2.8.4
- - Elasticsearch 1.4.4
  - Vim, Git, GCC (with C++ support)
- - Development headers for Python (2 and 3), PostgreSQL and some image libraries (libjpeg, zlib, etc)
- - Prebuilt wheels for Pillow 2.8.1, psycopg2 2.6 and libsass 0.7.0 for both python versions (and pip configured to use them)
-
+ - Development headers for Python 2 & 3, PostgreSQL and some image libraries (libjpeg, zlib, etc)
+ - Node.js, Bower, CoffeeScript and LESS
 
 Build instructions
 ------------------
 
 To generate the .box file:
-
-    ./build.sh
-
+```shell
+./build.sh
+```
 To install locally:
-
-    vagrant box add wagtail-base-v1.2.0 wagtail-base-v1.2.0.box
+```shell
+vagrant box add django-base-v1.0.0 django-base-v1.0.0.box
+```

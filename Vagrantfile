@@ -45,6 +45,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision :shell, :inline => "apt-get autoremove -q -y"
   config.vm.provision :shell, :inline => "apt-get clean -q"
 
-  config.vm.provision :shell, :inline => "dd if=/dev/zero of=/EMPTY bs=1M 2>/dev/null && rm -f /EMPTY"
-
 end

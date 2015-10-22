@@ -7,10 +7,14 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  ## For masterless, mount your file roots file root
-  config.vm.synced_folder "saltstack/roots/", "/srv/"
+  config.vm.synced_folder ".", "/vagrant", :nfs => true
 
-  config.vm.provision :shell, :inline => "DEBIAN_FRONTEND=noninteractive apt-get install -q -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' python-git python-software-properties"
+  ## For masterless, mount your file roots file root
+  config.vm.synced_folder "saltstack/roots", "/srv", :nfs => true
+
+  config.vm.network "private_network", ip: "33.33.33.66"
+
+  config.vm.provision :shell, :inline => "DEBIAN_FRONTEND=noninteractive apt-get install -q -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' python-dulwich"
   
   config.vm.provision :salt do |salt|
 
@@ -29,11 +33,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                       "vagrant" => {
                         "ensure" => "present",
                         "superuser" => true,
+                        "password" => "",
                       },
                     },
                   },
                   "redis" => {
                     "tcp_backlog" => 0,
+                  },
+                  "python" => {
+                    "version" => "3",
                   },
                 })
     salt.run_highstate = true
@@ -43,6 +51,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :inline => "apt-get remove -q -y juju juju-core"
   config.vm.provision :shell, :inline => "apt-get autoremove -q -y"
-  config.vm.provision :shell, :inline => "apt-get clean -q"
+  config.vm.provision :shell, :inline => "apt-get clean"
 
 end

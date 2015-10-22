@@ -1,11 +1,10 @@
 base:
   '*':
-    - common.ubuntu
-    - common.essential
-    - djangoapp.database
-    - djangoapp.python3
-    - djangoapp.python
-    - djangoapp.devel
-    - redis.server
+    - common
+    - locale.utf8
     - memcached
+    - postgres
+    - python
+    - redis
+    - scm
     - nodejs

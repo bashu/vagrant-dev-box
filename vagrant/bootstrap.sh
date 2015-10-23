@@ -9,8 +9,6 @@ export LC_ALL=en_US.UTF-8
 
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt-get install wget ca-certificates
-
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/apt_postgresql_org_pub_repos_apt.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
@@ -30,10 +28,8 @@ apt-get install -y -q libreadline-dev libncurses-dev libxslt-dev
 apt-get install -y -q libpq-dev libmemcached-dev
 
 # Python 2 & 3 packages
-apt-get install -y -q python python-dev python-sphinx python-pip
-apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
-
-apt-get install -y -q python-psycopg2 python-pycurl locales
+apt-get install -y -q python python-dev python-sphinx python-pip python-psycopg2 python-pycurl
+apt-get install -y -q python3 python3-dev python3-sphinx python3-pip python3-psycopg2 python3-pycurl
 
 # Deployment tools
 apt-get install -y -q python-virtualenv fabric

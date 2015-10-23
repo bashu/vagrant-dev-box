@@ -24,11 +24,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                   "postgres" => {
                     "pkg_dev" => false,
                     "pkg_libpq_dev" => "libpq-dev",
-                    "acls" => [
-                      ['local', 'all', 'postgres', 'trust'],
-                      ['local', 'all', 'all', 'trust'],
-                      ['local', 'all', '127.0.0.1/32', 'trust'],
-                    ],
                     "users" => {
                       "vagrant" => {
                         "ensure" => "present",

@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.synced_folder ".", "/vagrant", :nfs => true
+  config.vm.synced_folder ".", "/vagrant"
 
   ## For masterless, mount your file roots file root
   config.vm.synced_folder "saltstack/roots", "/srv", :nfs => true
@@ -49,8 +49,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   end  
 
-  config.vm.provision :shell, :inline => "apt-get remove -q -y juju juju-core"
-  config.vm.provision :shell, :inline => "apt-get autoremove -q -y"
-  config.vm.provision :shell, :inline => "apt-get clean"
+  config.vm.provision :shell, :path => "vagrant/purge.sh"
 
 end

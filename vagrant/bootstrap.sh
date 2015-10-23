@@ -9,6 +9,11 @@ export LC_ALL=en_US.UTF-8
 
 export DEBIAN_FRONTEND=noninteractive
 
+sudo apt-get install wget ca-certificates
+
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/apt_postgresql_org_pub_repos_apt.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+
 # Update APT database
 apt-get update -y -q && apt-get upgrade -y -q
 apt-get install -y -q ubuntu-standard ubuntu-minimal
@@ -28,11 +33,14 @@ apt-get install -y -q libpq-dev libmemcached-dev
 apt-get install -y -q python python-dev python-sphinx python-pip
 apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
 
+apt-get install -y -q python-psycopg2 python-pycurl locales
+
 # Deployment tools
 apt-get install -y -q python-virtualenv fabric
 
 # PGSQL, Memcached and Redis
-apt-get install -y -q postgresql memcached redis-server
+apt-get install -y -q postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 
+apt-get install -y -q memcached redis-server
 
 # Node.js, Bower, CoffeeScript and LESS
 apt-get install -y -q npm nodejs nodejs-legacy

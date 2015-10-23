@@ -32,7 +32,7 @@ apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
 apt-get install -y -q python-virtualenv fabric
 
 # PGSQL, Memcached and Redis
-apt-get install -y -q postgresql memcached redis
+apt-get install -y -q postgresql memcached redis-server
 
 # Node.js, Bower, CoffeeScript and LESS
 apt-get install -y -q npm nodejs nodejs-legacy

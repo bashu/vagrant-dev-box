@@ -28,8 +28,8 @@ apt-get install -y -q libreadline-dev libncurses-dev libxslt-dev
 apt-get install -y -q libpq-dev libmemcached-dev
 
 # Python 2 & 3 packages
-apt-get install -y -q python python-dev python-sphinx python-pip python-psycopg2 python-pycurl
-apt-get install -y -q python3 python3-dev python3-sphinx python3-pip python3-psycopg2 python3-pycurl
+apt-get install -y -q python python-dev python-sphinx python-pip
+apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
 
 # Deployment tools
 apt-get install -y -q python-virtualenv fabric

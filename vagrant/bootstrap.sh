@@ -17,7 +17,7 @@ apt-get update -y -q && apt-get upgrade -y -q
 apt-get install -y -q ubuntu-standard ubuntu-minimal
 
 # Common tools
-apt-get install -y -q htop logtail bash-completion python-software-properties build-essential vim-tiny
+apt-get install -y -q htop logtail bash-completion python-software-properties build-essential vim-tiny gettext
 
 # SCM tools
 apt-get install -y -q git-core subversion mercurial

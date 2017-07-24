@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 locale-gen en_US.UTF-8
 dpkg-reconfigure locales
 
@@ -7,9 +9,7 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export DEBIAN_FRONTEND=noninteractive
-
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/apt_postgresql_org_pub_repos_apt.list'
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main" > /etc/apt/sources.list.d/apt_postgresql_org_pub_repos_apt.list'
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 
 # Update APT database
@@ -24,18 +24,18 @@ apt-get install -y -q git-core subversion mercurial
 
 # Development libraries
 apt-get install -y -q libjpeg-dev libtiff-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev
-apt-get install -y -q libreadline-dev libncurses-dev libxslt-dev
-apt-get install -y -q libpq-dev libmemcached-dev
+apt-get install -y -q libreadline-dev libncurses-dev libxslt-dev libxml2-dev
+apt-get install -y -q libpq-dev libmemcached-dev libssl-dev
 
 # Python 2 & 3 packages
 apt-get install -y -q python python-dev python-sphinx python-pip
 apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
 
 # Deployment tools
-apt-get install -y -q python-virtualenv fabric
+apt-get install -y -q python-virtualenv python-git fabric
 
 # PGSQL, Memcached and Redis
-apt-get install -y -q postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 
+apt-get install -y -q postgresql postgresql-client postgresql-contrib
 apt-get install -y -q memcached redis-server
 
 # Node.js, Bower, CoffeeScript and LESS

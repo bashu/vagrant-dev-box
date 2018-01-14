@@ -14,7 +14,7 @@ wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-
 
 # Update APT database
 apt-get update -y -q && apt-get upgrade -y -q
-apt-get install -y -q ubuntu-standard ubuntu-minimal
+apt-get install -y -q ubuntu-standard ubuntu-minimal aptitude
 
 # Common tools
 apt-get install -y -q htop logtail bash-completion python-software-properties build-essential vim-tiny gettext
@@ -35,7 +35,7 @@ apt-get install -y -q python3 python3-dev python3-sphinx python3-pip
 apt-get install -y -q python-virtualenv python-git fabric
 
 # PGSQL, Memcached and Redis
-apt-get install -y -q postgresql postgresql-client postgresql-contrib
+apt-get install -y -q postgresql-9.6 postgresql-client-9.6 postgresql-contrib-9.6
 apt-get install -y -q memcached redis-server
 
 # Node.js, Bower, CoffeeScript and LESS

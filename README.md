@@ -1,7 +1,7 @@
 Vagrant Developer Box
 =====================
 
-A Vagrant box based on Ubuntu trusty64, with developers tools.
+A Vagrant box based on Ubuntu xenial64, with developers tools.
 
 Usage
 -----

@@ -18,7 +18,7 @@ What's inside
 -------------
 
  - Python 2 & 3 (use virtualenv for virtual environments)
- - PostgreSQL 9.3.x
+ - PostgreSQL 9.6.x
  - Vim, Git, GCC (with C++ support)
  - Development headers for Python 2 & 3, PostgreSQL and some image libraries (libjpeg, zlib, etc)
  - Node.js, Bower, CoffeeScript and LESS
